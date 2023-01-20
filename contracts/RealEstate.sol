@@ -40,7 +40,28 @@ Property memory newProperty = Property({
 // update the property 
 properties[_propertyId] = newProperty;
 propertyIds.push(_propertyId);
+
 }
 
+// build funtionanality to buy one or more of the listed properties
+function buyProperty(uint256 _propertyId) public payable{
+
+    Property storage property = properties[_propertyId];
+
+    // do some checks on property id requested by the buyer
+    require(property.forSale, "Property is not for sale");
+    require(property.price <= msg.value, "Your fund is not sufficient to buy this property");
+
+    // else : buy the property
+    property.owner = msg.sender;
+    property.forSale = false;
+
+    // then : send fund to the seller of the property
+    payable(property.owner).transfer(property.price);
+
+    // trigger the event to record this event happened
+    emit PropertySold(_propertyId);
+
+} 
 
 }
