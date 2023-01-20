@@ -22,7 +22,7 @@ mapping(uint256 => Property) public properties;
 uint256[] public propertyIds;
 
 // Create event to listen to every property sold
-event PropertySold(uint256, propertyId);
+event PropertySold(uint256 propertyId);
 
 // list the whole available properties for sale
 function propertyListing(uint256 _propertyId, uint256 _price, string memory _name, string memory _description, string memory _location) public {

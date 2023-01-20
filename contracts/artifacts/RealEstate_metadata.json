@@ -6,6 +6,32 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "PropertySold",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "buyProperty",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -67,6 +93,39 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_location",
+						"type": "string"
+					}
+				],
+				"name": "propertyListing",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -97,10 +156,10 @@
 	},
 	"sources": {
 		"contracts/RealEstate.sol": {
-			"keccak256": "0x4c5b5446fe8c967a5a28f7d133c8c606fff6e59e02d9ee06547608b77c9a3bf8",
+			"keccak256": "0x43cdca3858ce8cb4faa51eb13e78077f6d1ffe04495c76ee1efa2b00596bbc26",
 			"urls": [
-				"bzz-raw://a858cdb583ae030001e850bf9cb6dfaccc416a7fc6ea980686bfda2ed93fccdc",
-				"dweb:/ipfs/QmSCgAJMDybRtiFUqQTAPerJhix7jusFkQKka7jFYfKuK5"
+				"bzz-raw://731023356ea1489e55141781e4d9f241ffba8a2b45812dff5a04f8f458bfb845",
+				"dweb:/ipfs/QmP8QUktnAAzQ14DdiGWTQ9eaq4XBxqexX8FfK2LXhNeSC"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol": {
